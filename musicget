@@ -1,0 +1,37 @@
+#!/bin/python
+import os, time
+def download_youtube_content():
+    os.chdir("/sdcard/Download")
+    import pytube
+    finished =  False
+    while not finished:
+        finished =  False
+        url  =  input("Copy the url from youtube here, "  + "To QUIT PRESS [q] ")
+        if url == "q":
+            quit()
+        video  = pytube.YouTube(url)
+        t =  video.streams.filter(mime_type="audio/webm")
+        try:
+            t[0].download(".")
+            print("{} Downloaded to {}".format(video.title, os.getcwd()))
+            time.sleep(.5)
+        except Exception as e:
+            print(e)
+        time.sleep(.2)
+        for i in os.listdir():
+            if i.endswith(".webm"):
+                cnvrt = "mp3"
+                print("Converting {} to {}".format(i, i[:-3] + cnvrt))
+                pre,ext =  os.path.splitext(i)
+                try:
+                    os.system("ffmpeg -i '" + i + "' '" + pre + ".mp3'")
+                    print("File has been successfully converted")
+                except:
+                    print(i[:-4] + " already exists")
+        for i in os.listdir():
+            if i.endswith("webm"):
+                os.remove(i)
+
+
+
+download_youtube_content()
