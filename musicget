@@ -19,7 +19,7 @@ def download_youtube_content():
             print(e)
         time.sleep(.2)
         for i in os.listdir():
-            if i.endswith(".webm"):
+            if i == video.title+".webm":
                 cnvrt = "mp3"
                 print("Converting {} to {}".format(i, i[:-3] + cnvrt))
                 pre,ext =  os.path.splitext(i)
@@ -29,8 +29,9 @@ def download_youtube_content():
                 except:
                     print(i[:-4] + " already exists")
         for i in os.listdir():
-            if i.endswith("webm"):
+            if i == video.title+".webm":
                 os.remove(i)
+                
 
 
 
