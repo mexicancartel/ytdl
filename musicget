@@ -1,3 +1,4 @@
+#!/bin/python
 import os
 def download_youtube_content():
     os.chdir("/sdcard/Download")
