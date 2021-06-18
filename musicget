@@ -24,7 +24,7 @@ def download_youtube_content():
                 print("Converting {} to {}".format(i, i[:-4] + cnvrt))
                 
                 try:
-                    os.system("ffmpeg -i "+ video.title +".webm "+video.title+".mp3 ")
+                    os.system("ffmpeg -i '"+ video.title +".webm' '"+video.title+".mp3' ")
                     print("File has been successfully converted")
                 except:
                     print(i[:-4] + " already exists")
