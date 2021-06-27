@@ -7,5 +7,5 @@ Edit 4th line to change save directory, comment the ffmpeg part if you don't wan
 
 ::          Drop the link, it saves the song             ::
 
-requires : Python (with pytube module installed)
+requires : Python (with youtube_dl module installed)
          : FFMpeg (Not required if you need no convertion)
