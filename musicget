@@ -1,6 +1,6 @@
 #!/bin/python
 import os
-def download_youtube_content():
+def ytdl():
     os.chdir("/sdcard/Download")
     import pafy
     finished =  False
@@ -33,4 +33,4 @@ def download_youtube_content():
                 os.remove(i)
 
 
-download_youtube_content()
+ytdl()
