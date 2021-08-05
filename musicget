@@ -3,9 +3,7 @@ import os
 def ytdl():
     os.chdir("/sdcard/Download")
     import pafy
-    finished =  False
-    while not finished:
-        finished =  False
+    while True:
         url  =  input("Copy the url from youtube here, "  + "To QUIT PRESS [q] ")
         if url == "q":
             quit()
@@ -31,6 +29,5 @@ def ytdl():
         for i in os.listdir():
             if i == video.title+".webm":
                 os.remove(i)
-
 
 ytdl()
