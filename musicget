@@ -2,6 +2,7 @@
 import os
 def ytdl():
     os.chdir("/sdcard/Download")
+    os.environ["PAFY_BACKEND"] = "internal"
     import pafy
     while True:
         url  =  input("Copy the url from youtube here, "  + "To QUIT PRESS [q] ")
