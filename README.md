@@ -1,6 +1,6 @@
 # ytdl
-A youtube song downloader that doesn't work either
+A youtube song downloader that with direct conversion to mp3
 
-requires : Python (with youtube_dl, pafy module installed)
+requires : Python (with pytube module installed)
          : FFMpeg (Not required if you need no convertion)
 
